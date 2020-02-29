@@ -15,6 +15,8 @@ const responseReducer = (state = [], action) =>{
             return [...state, action.payload];
         case 'GET_INFO':
             return state;
+        case 'CLEAR_RESPONSE':
+            return state = [];
         default: 
             return state;
     }

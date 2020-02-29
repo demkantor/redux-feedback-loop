@@ -21,7 +21,6 @@ class Review extends Component {
     console.log('this is input', input);
     axios.post('/api/response', input)
    .then( response => {
-     console.table(response);
    })
    .catch( error => {
      alert(`Couldn't submit responses at this time`);
@@ -33,6 +32,9 @@ class Review extends Component {
 
   nextPage =()=>{
     this.props.history.push('/submitted');
+    this.props.dispatch({
+      type: 'CLEAR_RESPONSE'
+    });
   }
 
 
