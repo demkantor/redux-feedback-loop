@@ -1,22 +1,29 @@
 import React, {Component} from 'react';
 import '../App/App.css';
+import {connect} from 'react-redux';
 
 class Supporting extends Component {
 
-  state= [];
+  state= null;
 
-  handleClick =(event)=>{
-    event.preventDefault();
+  nextPage =()=>{
     this.props.history.push('/comments');
   } 
   
   handleChangeFor = (event) => {
     this.setState({
-      state: {
-        understanding: event.target.value
-      }
+        supporting: event.target.value
     })
     console.log(this.state);
+  }
+
+  recordResponse = (event) => {
+    event.preventDefault();
+      this.props.dispatch({
+        type: 'SET_RESPONSE', 
+        payload: this.state
+      });
+    this.nextPage();
   }
   
 render() {
@@ -24,7 +31,7 @@ return (
         <div className="supporting">
           <h1>Supporting!</h1>
           <p>please rank how well you are supported on a five point scale</p>
-            <form onSubmit={this.handleClick}>
+            <form onSubmit={this.recordResponse}>
             <label for="one">Ignored</label>
               <input required type="radio" id="one" name="orderType" value="one"
                 onChange={this.handleChangeFor}
@@ -54,4 +61,4 @@ return (
   }
 } 
 
-export default Supporting;
+export default connect()(Supporting);

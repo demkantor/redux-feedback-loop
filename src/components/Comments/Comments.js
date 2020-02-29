@@ -1,31 +1,37 @@
 import React, {Component} from 'react';
 import '../App/App.css';
+import {connect} from 'react-redux';
 
 class Comments extends Component {
 
-  state= [];
+  state= null;
 
-  handleClick =(event)=>{
-    event.preventDefault();
+  nextPage =()=>{
     this.props.history.push('/review');
   } 
   
   handleChangeFor = (event) => {
     this.setState({
-      state: {
-        understanding: event.target.value
-      }
+        comments: event.target.value
     })
     console.log(this.state);
   }
 
+  recordResponse = (event) => {
+    event.preventDefault();
+      this.props.dispatch({
+        type: 'SET_RESPONSE', 
+        payload: this.state
+      });
+    this.nextPage();
+  }
 
 render() {
 return (
         <div className="comments">
           <h1>Comments!</h1>
           <p>any thing you would like us to know?</p>
-          <form onSubmit={this.handleClick}>
+          <form onSubmit={this.recordResponse}>
           <input placeholder="feel free to speak your mind" 
               onChange={this.handleChangeFor}
           />
@@ -36,4 +42,4 @@ return (
   }
 } 
 
-export default Comments;
+export default connect()(Comments);

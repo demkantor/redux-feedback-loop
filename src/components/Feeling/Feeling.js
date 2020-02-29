@@ -1,22 +1,29 @@
 import React, {Component} from 'react';
 import '../App/App.css';
+import {connect} from 'react-redux';
 
 class Feeling extends Component {
 
-  state= [];
+  state= null;
 
-  handleClick =(event)=>{
-    event.preventDefault();
+  nextPage =()=>{
     this.props.history.push('/understanding');
   }
 
   handleChangeFor = (event) => {
     this.setState({
-      state: {
         feelings: event.target.value
-      }
     })
     console.log(this.state);
+  }
+
+  recordResponse = (event) => {
+    event.preventDefault();
+      this.props.dispatch({
+        type: 'SET_RESPONSE', 
+        payload: this.state
+      });
+    this.nextPage();
   }
   
 render() {
@@ -25,7 +32,7 @@ return (
         <div className="feeling">
           <h1>Feeling!</h1>
           <p>please rank how you feel today on a five point scale</p>
-            <form onSubmit={this.handleClick}>
+            <form onSubmit={this.recordResponse}>
             <label for="one">Abysmal</label>
               <input required type="radio" id="one" name="orderType" value="one"
                 onChange={this.handleChangeFor}
@@ -55,4 +62,4 @@ return (
   }
 } 
 
-export default Feeling;
+export default connect()(Feeling);
