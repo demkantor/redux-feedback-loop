@@ -12,7 +12,7 @@ class Feeling extends Component {
 
   handleChangeFor = (event) => {
     this.setState({
-        feelings: event.target.value
+        feeling: event.target.value
     })
     console.log(this.state);
   }

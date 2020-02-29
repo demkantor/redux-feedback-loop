@@ -21,8 +21,8 @@ return (
           <div>
             {this.props.reduxState.responseReducer.map(response =>
             <div>
-            <div key={response.feelings}>Feelings: {response.feelings}</div>
-            <div key={response.understandings}>Understanding: {response.understanding}</div>
+            <div key={response.feeling}>Feelings: {response.feeling}</div>
+            <div key={response.understanding}>Understanding: {response.understanding}</div>
             <div key={response.supporting}>Supported: {response.supporting}</div>
             <div key={response.comments}>Comments: {response.comments}</div>
 
