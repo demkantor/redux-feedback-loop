@@ -9,14 +9,21 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 
-
+const responseReducer = (state = [], action) =>{
+    switch (action.type){
+        case 'SET_RESPONSE':
+            return state;
+        default: 
+            return state;
+    }
+}
 
 
 
 
 const storeInstance = createStore(
     combineReducers({
-
+        responseReducer
     }),
     applyMiddleware(logger),
 );
