@@ -13,8 +13,6 @@ const responseReducer = (state = [], action) =>{
     switch (action.type){
         case 'SET_RESPONSE':
             return [...state, action.payload];
-        case 'GET_INFO':
-            return state;
         case 'CLEAR_RESPONSE':
             return state = [];
         default: 
@@ -22,12 +20,22 @@ const responseReducer = (state = [], action) =>{
     }
 }
 
-
+const databaseReducer = (state = [], action) =>{
+    switch (action.type){
+        case 'GET_INFO':
+            return [...state, action.payload];
+        case 'DISPLAY_DATABASE':
+            return state;
+        default: 
+            return state;
+    }
+}
 
 
 const storeInstance = createStore(
     combineReducers({
-        responseReducer
+        responseReducer,
+        databaseReducer
     }),
     applyMiddleware(logger),
 );
