@@ -6,15 +6,13 @@
 ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/scottbromander/the_marketplace.svg?style=flat-square)
 ![FORKS](https://img.shields.io/github/forks/scottbromander/the_marketplace.svg?style=social)
 
-# full-Stack Feedback App
+# Full-Stack Feedback App
 
 ## Description
 
 _Duration: A few hours over the weekend_
 
-A place for users to display pictures. 
-Ability to like a photo with like counter displayed.
-Ability to delete image from database.
+A place for users to subimt feedback.
 Uniquely styled and responsive to fit a mobile device or larger screen.
 
 ## Screen Shot
@@ -30,7 +28,7 @@ react
 
 ## Installation
 
-1. fork repo
+1. Fork repo
 2. Open up your editor of choice and run an `npm install`
 3. Run `npm run server` in your terminal
 4. Run `npm run client` in your terminal
@@ -54,7 +52,7 @@ SweetAlerts
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) in Minneapolis who equipped and helped me to make this application a reality. (Thank your people)
+Thanks to [Prime Digital Academy](www.primeacademy.io) in Minneapolis who equipped and helped me to make this application a reality.
 
 ## Support
 If you have suggestions or issues, please email me at [demkantor@gmail.com](www.google.com)
