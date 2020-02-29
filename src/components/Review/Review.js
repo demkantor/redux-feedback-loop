@@ -12,7 +12,12 @@ render() {
 return (
         <div className="review">
           <h1>Review!</h1>
-          <button className="nextButton" onClick={this.handleClick}>Next</button>
+          <h2>this is what you had to say</h2>
+          <p>feelings: </p>
+          <p>Understanding: </p>
+          <p>Supported: </p>
+          <p>comments: </p>
+          <button className="nextButton" onClick={this.handleClick}>Submit</button>
         </div>
     );
   }

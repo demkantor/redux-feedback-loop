@@ -3,9 +3,7 @@ import '../App/App.css';
 
 class Feeling extends Component {
 
-  state= {
-
-  }
+  state= [];
 
   handleClick =(event)=>{
     event.preventDefault();
@@ -26,6 +24,7 @@ render() {
 return (
         <div className="feeling">
           <h1>Feeling!</h1>
+          <p>please rank how you feel today on a five point scale</p>
             <form onSubmit={this.handleClick}>
             <label for="one">Abysmal</label>
               <input required type="radio" id="one" name="orderType" value="one"
@@ -48,6 +47,7 @@ return (
                 onChange={this.handleChangeFor} 
                 />
               <label for="five">Amazing!</label>
+              <br/>
               <button className="nextButton">Next</button>
             </form>
         </div>

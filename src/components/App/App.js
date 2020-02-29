@@ -26,7 +26,7 @@ class App extends Component {
         <Router>
           <Header />
           <br/>
-          <button className="nextButton" onClick={this.handleClick}>Begin Feedback Survey</button>
+          <Link to='/feelings' className="nextButton">Begin Feedback Survey</Link>
           <br/>
           <Route path="/feelings" component={Feelings}/>
           <Route path="/understanding" component = {Understanding}/>

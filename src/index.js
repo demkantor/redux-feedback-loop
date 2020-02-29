@@ -12,7 +12,7 @@ import logger from 'redux-logger';
 const responseReducer = (state = [], action) =>{
     switch (action.type){
         case 'SET_RESPONSE':
-            return state;
+            return [...state, action.payload];
         default: 
             return state;
     }
