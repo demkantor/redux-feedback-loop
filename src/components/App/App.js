@@ -26,7 +26,7 @@ class App extends Component {
         <Router>
           <Header />
           <br/>
-          <Link to='/feelings' className="nextButton">Begin Feedback Survey</Link>
+          <Link to='/feelings' className="nextButton">Record Feedback</Link>
           <br/>
           <Route path="/feelings" component={Feelings}/>
           <Route path="/understanding" component = {Understanding}/>

@@ -38,10 +38,18 @@ class Admin extends Component {
     this.props.history.push('/');
   }
 
+  addFlag=()=>{
+    swal("Would you like to flag this for further review?", {
+      buttons: ["No thanks", 'yeah, need to look this over'],
+    });
+  }
+
 
 render() {
 return (
         <div className="admin">
+          <h1>Previous Feedback</h1>
+          <p>click to flag</p>
           <table>
             <thead>
               <tr>
@@ -54,10 +62,10 @@ return (
             </thead>
             <tbody className="feedbackArray">
               {this.state.feedbackArray.map(feedback => 
-                  <tr key={feedback.id}>
+                  <tr key={feedback.id} onClick={this.addFlag}>
                     <td>{feedback.feeling}</td>
                     <td>{feedback.understanding}</td>
-                    <td>{feedback.supporting}</td>
+                    <td>{feedback.support}</td>
                     <td>{feedback.comments}</td>
                     <td><button onClick={this.removeMe} className="deleteButton">Remove Order</button></td>
                   </tr>

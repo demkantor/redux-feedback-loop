@@ -14,7 +14,6 @@ class Feeling extends Component {
     this.setState({
         feeling: event.target.value
     })
-    console.log(this.state);
   }
 
   recordResponse = (event) => {

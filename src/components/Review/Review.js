@@ -38,28 +38,30 @@ class Review extends Component {
     });
   }
 
-
-
 render() {
+ 
 return (
         <div className="review">
           <h1>Review!</h1>
           <h2>this is what you had to say</h2>
-          <p>feelings: </p>
-          <p>Understanding: </p>
-          <p>Supported: </p>
-          <p>comments: </p>
-          <div>
-            {this.props.reduxState.responseReducer.map(response =>
-            <div>
-            <div key={response.feeling}>Feelings: {response.feeling}</div>
-            <div key={response.understanding}>Understanding: {response.understanding}</div>
-            <div key={response.supporting}>Supported: {response.supporting}</div>
-            <div key={response.comments}>Comments: {response.comments}</div>
-
-            </div>
-            )}
-          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Feeling Score</th>
+                <th>Comprehension</th>
+                <th>Staff Support</th>
+                <th>Comments</th>
+              </tr>
+            </thead>
+            <tbody className="feedback">
+                <tr key={Date.now()}>
+                    <td>{this.props.reduxState.responseReducer[0].feeling}</td>
+                    <td>{this.props.reduxState.responseReducer[1].understanding}</td>
+                    <td>{this.props.reduxState.responseReducer[2].supporting}</td>
+                    <td>{this.props.reduxState.responseReducer[3].comments}</td>
+                  </tr>
+            </tbody> 
+        </table>
           <button className="nextButton" onClick={this.handleClick}>Submit</button>
         </div>
     );
