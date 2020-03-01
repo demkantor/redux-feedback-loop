@@ -75,7 +75,7 @@ render() {
 return (
         <div className="admin">
           <h1>Previous Feedback</h1>
-          <p>click to flag</p>
+          <p>click a line to flag</p>
           <table>
             <thead>
               <tr>

@@ -22,6 +22,10 @@ class Feeling extends Component {
         type: 'SET_RESPONSE', 
         payload: this.state
       });
+      this.props.dispatch({
+        type: 'SET_FEEL', 
+        payload: this.state
+      });
     this.nextPage();
   }
   
@@ -29,7 +33,10 @@ render() {
 
 return (
         <div className="feeling">
-          <h1>Feeling!</h1>
+          <div className="meter">
+            <span className="one"></span>
+          </div>
+          <h1>How are you feeling today?</h1>
           <p>please rank how you feel today on a five point scale</p>
             <form onSubmit={this.recordResponse}>
             <label for="one">Abysmal</label>

@@ -6,6 +6,16 @@ import axios from 'axios';
 
 class Review extends Component {
 
+  state={
+
+  }
+
+  componentDidMount=()=>{
+    this.setState({
+
+    })
+  }
+
   handleClick =()=>{
     const feedback = this.props.reduxState.responseReducer
   let objectToSend = {
@@ -55,10 +65,10 @@ return (
             </thead>
             <tbody className="feedback">
                 <tr key={Date.now()}>
-                    <td>{this.props.reduxState.responseReducer[0].feeling}</td>
-                    <td>{this.props.reduxState.responseReducer[1].understanding}</td>
-                    <td>{this.props.reduxState.responseReducer[2].supporting}</td>
-                    <td>{this.props.reduxState.responseReducer[3].comments}</td>
+                    <td>{this.props.reduxState.feelingReducer[0].feeling}</td>
+                    <td>{this.props.reduxState.understandingReducer[0].understanding}</td>
+                    <td>{this.props.reduxState.supportReducer[0].supporting}</td>
+                    <td>{this.props.reduxState.commentReducer[0].comments}</td>
                   </tr>
             </tbody> 
         </table>

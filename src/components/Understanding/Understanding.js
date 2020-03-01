@@ -23,14 +23,21 @@ class Understanding extends Component {
         type: 'SET_RESPONSE', 
         payload: this.state
       });
+      this.props.dispatch({
+        type: 'SET_UNDERSTAND', 
+        payload: this.state
+      });
     this.nextPage();
   }
 
 render() {
 return (
         <div className="understanding">
-          <h1>Understanding!</h1>
-          <p>please rank your understanding of today's material on a five point scale</p>
+          <div className="meter">
+            <span className="quarter"></span>
+          </div>
+          <h1>How well do you understand todays material?</h1>
+          <p>please rank your understanding on a five point scale</p>
             <form onSubmit={this.recordResponse}>
             <label for="one">Dunce</label>
               <input required type="radio" id="one" name="orderType" value="1"

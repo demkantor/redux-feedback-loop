@@ -23,13 +23,20 @@ class Supporting extends Component {
         type: 'SET_RESPONSE', 
         payload: this.state
       });
+      this.props.dispatch({
+        type: 'SET_SUPPORT', 
+        payload: this.state
+      });
     this.nextPage();
   }
   
 render() {
 return (
         <div className="supporting">
-          <h1>Supporting!</h1>
+          <div className="meter">
+            <span className="half"></span>
+          </div>
+          <h1>How well do you feel supported by staff today?</h1>
           <p>please rank how well you are supported on a five point scale</p>
             <form onSubmit={this.recordResponse}>
             <label for="one">Ignored</label>

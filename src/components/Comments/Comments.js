@@ -4,7 +4,9 @@ import {connect} from 'react-redux';
 
 class Comments extends Component {
 
-  state= null;
+  state = {
+    comments:''
+  };
 
   nextPage =()=>{
     this.props.history.push('/review');
@@ -22,13 +24,20 @@ class Comments extends Component {
         type: 'SET_RESPONSE', 
         payload: this.state
       });
+      this.props.dispatch({
+        type: 'SET_COMMENT', 
+        payload: this.state
+      });
     this.nextPage();
   }
 
 render() {
 return (
         <div className="comments">
-          <h1>Comments!</h1>
+          <div className="meter">
+            <span className="threeQuarter"></span>
+          </div>
+          <h1>Do you have comments for staff today?</h1>
           <p>any thing you would like us to know?</p>
           <form onSubmit={this.recordResponse}>
           <input placeholder="feel free to speak your mind" 
