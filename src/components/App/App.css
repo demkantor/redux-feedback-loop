@@ -22,6 +22,10 @@ tr:hover{
   background-color: #033076;
 }
 
+[data-value="true"]{
+  background-color: #035ff1;
+}
+
 .adminLink{
   float: left;
   font-size: smaller;

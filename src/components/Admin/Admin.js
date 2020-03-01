@@ -71,7 +71,7 @@ return (
             </thead>
             <tbody className="feedbackArray">
               {this.state.feedbackArray.map(feedback => 
-                  <tr key={feedback.id} onClick={() => 
+                  <tr key={feedback.id} data-value={feedback.flagged} onClick={() => 
                     this.addFlag(feedback, `${feedback.flagged}`)}>
                     <td>{feedback.feeling}</td>
                     <td>{feedback.understanding}</td>

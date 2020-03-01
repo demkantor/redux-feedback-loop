@@ -7,7 +7,7 @@ const pool = require('../modules/pool');
 // GET route to query data base for responses
 router.get('/', (req, res) => {
     console.log('GET /api/response');
-    pool.query('SELECT * from "feedback";').then((result) => {
+    pool.query('SELECT * from "feedback" ORDER BY "id" DESC;').then((result) => {
         console.table(result.rows)
         res.send(result.rows);
     }).catch((error) => {
