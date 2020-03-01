@@ -2,31 +2,43 @@ import React, {Component} from 'react';
 import '../App/App.css';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 
 class Review extends Component {
 
-  state={
-
-  }
-
-  componentDidMount=()=>{
-    this.setState({
-
-    })
-  }
 
   handleClick =()=>{
-    const feedback = this.props.reduxState.responseReducer
   let objectToSend = {
-       feeling: Number(feedback[0].feeling),
-       understanding: Number(feedback[1].understanding),
-       supporting: Number(feedback[2].supporting),
-       comments: feedback[3].comments
+       feeling: Number(this.props.reduxState.feelingReducer.feeling),
+       understanding: Number(this.props.reduxState.understandingReducer.understanding),
+       supporting: Number(this.props.reduxState.supportReducer.supporting),
+       comments: this.props.reduxState.commentReducer.comments
      } 
-     console.log('this is objectToSend', objectToSend);    
-    this.axiosPostFunction(objectToSend);
-  } 
+    if(objectToSend.feeling === -1){
+          swal({
+            title: "your responses don't appear valid",
+            text: "are you sure you want to submit?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("deal! feedback submitted!", {
+                icon: "success",
+              });
+              this.axiosPostFunction(objectToSend);
+            } else {
+              swal("sending you back to start over!");
+            }
+            this.props.history.push('/');
+          });
+    }else
+      this.axiosPostFunction(objectToSend);
+    } 
+
+
 
   axiosPostFunction=(input)=>{
     console.log('this is input', input);
