@@ -19,42 +19,42 @@ const responseReducer = (state = [], action) =>{
             return state;
     }
 }
-const feelingReducer = (state = [], action) =>{
+const feelingReducer = (state = {feeling: "-1"}, action) =>{
     switch (action.type){
         case 'SET_FEEL':
-            return [...state, action.payload];
+            return state = action.payload;
         case 'CLEAR_RESPONSE':
-            return state = [];
+            return state = {feeling: "-1"};
         default: 
             return state;
     }
 }
-const understandingReducer = (state = [], action) =>{
+const understandingReducer = (state = {understanding: "-1"}, action) =>{
     switch (action.type){
         case 'SET_UNDERSTAND':
-            return [...state, action.payload];
+            return state = action.payload;;
         case 'CLEAR_RESPONSE':
-            return state = [];
+            return state = {understanding: "-1"};
         default: 
             return state;
     }
 }
-const supportReducer = (state = [], action) =>{
+const supportReducer = (state = {supporting: "-1"}, action) =>{
     switch (action.type){
         case 'SET_SUPPORT':
-            return [...state, action.payload];
+            return state = action.payload;;
         case 'CLEAR_RESPONSE':
-            return state = [];
+            return state = {supporting: "-1"};
         default: 
             return state;
     }
 }
-const commentReducer = (state = [], action) =>{
+const commentReducer = (state = {comments: ""}, action) =>{
     switch (action.type){
         case 'SET_COMMENT':
-            return [...state, action.payload];
+            return state = action.payload;;
         case 'CLEAR_RESPONSE':
-            return state = [];
+            return state = {comments: ""};
         default: 
             return state;
     }

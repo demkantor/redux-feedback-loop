@@ -4,7 +4,9 @@ import {connect} from 'react-redux';
 
 class Understanding extends Component {
 
-  state= null;
+  state= {
+    understanding: "-1"
+  }
 
   nextPage =()=>{
     this.props.history.push('/supporting');

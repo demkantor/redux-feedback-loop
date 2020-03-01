@@ -65,10 +65,10 @@ return (
             </thead>
             <tbody className="feedback">
                 <tr key={Date.now()}>
-                    <td>{this.props.reduxState.feelingReducer[0].feeling}</td>
-                    <td>{this.props.reduxState.understandingReducer[0].understanding}</td>
-                    <td>{this.props.reduxState.supportReducer[0].supporting}</td>
-                    <td>{this.props.reduxState.commentReducer[0].comments}</td>
+                    <td>{this.props.reduxState.feelingReducer.feeling}</td>
+                    <td>{this.props.reduxState.understandingReducer.understanding}</td>
+                    <td>{this.props.reduxState.supportReducer.supporting}</td>
+                    <td>{this.props.reduxState.commentReducer.comments}</td>
                   </tr>
             </tbody> 
         </table>
