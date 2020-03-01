@@ -38,11 +38,20 @@ class Admin extends Component {
     this.props.history.push('/');
   }
 
-  addFlag=()=>{
+  addFlag=(feedback, properyName)=>{
     swal("Would you like to flag this for further review?", {
       buttons: ["No thanks", 'yeah, need to look this over'],
     });
-  }
+    axios.put(`/api/response/${feedback.id}`, {flag: properyName})
+     .then( response => {
+       this.getFeedback();
+     })
+     .catch( error => {
+       alert(`Couldn't update flag, please try again later`);
+       console.log('Error with PUT flag', error);
+     })
+ }
+
 
 
 render() {
@@ -62,7 +71,8 @@ return (
             </thead>
             <tbody className="feedbackArray">
               {this.state.feedbackArray.map(feedback => 
-                  <tr key={feedback.id} onClick={this.addFlag}>
+                  <tr key={feedback.id} onClick={() => 
+                    this.addFlag(feedback, `${feedback.flagged}`)}>
                     <td>{feedback.feeling}</td>
                     <td>{feedback.understanding}</td>
                     <td>{feedback.support}</td>

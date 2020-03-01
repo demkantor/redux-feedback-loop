@@ -32,5 +32,27 @@ router.post('/', (req, res) => {
       })
    })
    
+   // PUT will modify the quantity of an inventory item by id
+router.put('/:id', (req, res) => {
+    let idToUpdate = req.params.id;
+    let checkFlag = req.body.flag;
+    let flagged = 'true'
+    if (checkFlag === 'false'){
+        flagged = 'true';
+    }else{
+        flagged = 'false'
+    }
+    // console.log('in put with', idToUpdate, flagged);
+    let sqlText = `UPDATE "feedback" SET "flagged" =$1 WHERE "id" =$2`;
+    pool.query(sqlText, [flagged, idToUpdate])
+      .then((result) => {
+        res.sendStatus(200);
+      })
+      .catch((error) => {
+        console.log(`Error making database query ${sqlText}`, error);
+        res.sendStatus(500);
+      })
+   })
+   
 
 module.exports = router;
