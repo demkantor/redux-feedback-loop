@@ -11,6 +11,7 @@ th, td {
 th{
   color: white;
   background-color: #033076;
+  font-size: larger;
 }
 
 tr:nth-child(even) {
@@ -23,7 +24,8 @@ tr:hover{
 }
 
 [data-value="true"]{
-  background-color: #035ff1;
+  color: #035ff1;
+  font-size: larger;
 }
 
 .adminLink{

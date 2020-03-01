@@ -28,9 +28,29 @@ class Admin extends Component {
       })
   }
 
-  removeMe=()=>{
-    swal("Would you like to delete this?", {
-      buttons: ["Not from the database no!", 'yeah, clear it out of there!'],
+  removeMe=(properyName)=>{
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this feedback",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+          axios.delete(`/api/response/${properyName.id}`)
+          .then(function(response){
+              swal("Poof! Your feedback has been removed!", {
+                  icon: "success",
+                });
+          }).catch(function(err){
+              alert('error with DELETE:', err);
+          })
+          this.getFeedback();
+      } else {
+        swal("Your feedback will stay!");
+      }
+      this.getFeedback();
     });
   }
 
@@ -39,9 +59,6 @@ class Admin extends Component {
   }
 
   addFlag=(feedback, properyName)=>{
-    swal("Would you like to flag this for further review?", {
-      buttons: ["No thanks", 'yeah, need to look this over'],
-    });
     axios.put(`/api/response/${feedback.id}`, {flag: properyName})
      .then( response => {
        this.getFeedback();
@@ -77,7 +94,7 @@ return (
                     <td>{feedback.understanding}</td>
                     <td>{feedback.support}</td>
                     <td>{feedback.comments}</td>
-                    <td><button onClick={this.removeMe} className="deleteButton">Remove Order</button></td>
+                    <td><button onClick={()=>this.removeMe(feedback)} className="deleteButton">Remove Order</button></td>
                   </tr>
                 )}
             </tbody> 

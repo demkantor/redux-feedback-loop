@@ -37,11 +37,11 @@ router.put('/:id', (req, res) => {
     let idToUpdate = req.params.id;
     let checkFlag = req.body.flag;
     let flagged = 'true'
-    if (checkFlag === 'false'){
-        flagged = 'true';
-    }else{
-        flagged = 'false'
-    }
+        if (checkFlag === 'false'){
+            flagged = 'true';
+        }else{
+            flagged = 'false'
+        }
     // console.log('in put with', idToUpdate, flagged);
     let sqlText = `UPDATE "feedback" SET "flagged" =$1 WHERE "id" =$2`;
     pool.query(sqlText, [flagged, idToUpdate])
@@ -53,6 +53,20 @@ router.put('/:id', (req, res) => {
         res.sendStatus(500);
       })
    })
+
+router.delete('/:id',(req,res)=>{
+    let reqId = req.params.id;
+    let sqlText = 'DELETE FROM "feedback" WHERE "id" =$1;';
+    console.log(`in delete with ${reqId}`);
+    pool.query(sqlText, [reqId])
+    .then((result)=>{
+        res.sendStatus(200);
+    })
+    .catch((error)=>{
+    console.log(`Error making database delete ${sqlText}`, error);
+    res.sendStatus(500);
+    })
+})
    
 
 module.exports = router;
