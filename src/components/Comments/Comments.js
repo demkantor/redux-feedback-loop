@@ -14,7 +14,6 @@ class Comments extends Component {
     this.setState({
         comments: event.target.value
     })
-    console.log(this.state);
   }
 
   recordResponse = (event) => {

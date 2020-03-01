@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import '../App/App.css';
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
-import {connect} from 'react-redux';
+import {HashRouter as Router, Route} from 'react-router-dom';
 import Header from '../Header/Header';
 import Feelings from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
@@ -10,14 +9,12 @@ import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Submitted from '../Submitted/Submitted';
 import Admin from '../Admin/Admin';
+import Home from '../Home/Home'
 
 
 
 class App extends Component {
 
-  handleClick =()=>{
-    
-  }
 
   render() {
 
@@ -26,8 +23,8 @@ class App extends Component {
         <Router>
           <Header />
           <br/>
-          <Link to='/feelings' className="nextButton">Record Feedback</Link>
           <br/>
+          <Route exact path="/" component={Home}/>
           <Route path="/feelings" component={Feelings}/>
           <Route path="/understanding" component = {Understanding}/>
           <Route path="/supporting" component={Supporting} />
@@ -42,8 +39,4 @@ class App extends Component {
 }
 
 
-const putReduxStateOnProps = (reduxState) => ({
-  reduxState
-})
-
-export default connect(putReduxStateOnProps)(App);
+export default App;
