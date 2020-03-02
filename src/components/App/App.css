@@ -185,7 +185,9 @@ tr:hover{
 }
 
 .input{
-  width: 360px
+  width: 360px;
+  height: 50px;
+  font-size: larger;
 }
 
 .radio{

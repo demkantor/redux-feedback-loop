@@ -49,19 +49,19 @@ return (
               <input required type="radio" id="one" className="radio" name="orderType" value="1"
                 onChange={this.handleChangeFor}
               />
-              <label for="one">-----</label>
+              <label for="one">---</label>
               <input required type="radio" id="two" className="radio" name="orderType" value="2"
                 onChange={this.handleChangeFor} 
                 />
-              <label for="two">-----</label>
+              <label for="two">---</label>
               <input required type="radio" id="three" className="radio" name="orderType" value="3"
                 onChange={this.handleChangeFor}
               />
-              <label for="three">-----</label>
+              <label for="three">---</label>
               <input required type="radio" id="four" className="radio" name="orderType" value="4"
                 onChange={this.handleChangeFor} 
                 />
-              <label for="four">-----</label>
+              <label for="four">---</label>
               <input required type="radio" id="five" className="radio" name="orderType" value="5"
                 onChange={this.handleChangeFor} 
                 />
