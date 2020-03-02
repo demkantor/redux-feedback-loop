@@ -42,11 +42,11 @@ return (
             <span className="threeQuarter"></span>
           </div>
           <h1>Do you have comments for staff today?</h1>
-          <p>any thing you would like us to know?</p>
+          <p>is there any thing you would like us to know?</p>
           <form onSubmit={this.recordResponse}>
           <input placeholder="feel free to speak your mind" 
               onChange={this.handleChangeFor}
-              size="50" />
+              className="input" />
               <span>
                 <button type="button" onClick={this.prevPage} className="prevButton">Prev</button>
                 <button className="nextButton">Next</button>

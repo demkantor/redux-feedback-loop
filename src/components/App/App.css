@@ -184,6 +184,10 @@ tr:hover{
   margin: 2px;
 }
 
+.input{
+  width: 400px
+}
+
 @media (min-width: 600px){
   .card{
     flex-direction: row;
@@ -217,6 +221,10 @@ tr:hover{
   .home{
     padding: 10px;
     padding-left: 20px;
+  }
+
+  .input{
+    width: 500px;
   }
 
 }

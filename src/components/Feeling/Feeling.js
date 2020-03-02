@@ -42,7 +42,7 @@ return (
           <div className="meter">
             <span className="one"></span>
           </div>
-          <h1>HTell us how you are feeling today?</h1>
+          <h1>Please let us how you are feeling today?</h1>
           <p>please rank how you feel today on a five point scale</p>
             <form onSubmit={this.recordResponse}>
             <label for="one">Abysmal</label>

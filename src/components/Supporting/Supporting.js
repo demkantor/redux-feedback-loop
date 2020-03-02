@@ -43,7 +43,7 @@ return (
             <span className="half"></span>
           </div>
           <h1>How well do you feel supported by staff today?</h1>
-          <p>please rank how well you are supported on a five point scale</p>
+          <p>rank how well you are supported on a five point scale</p>
             <form onSubmit={this.recordResponse}>
             <label for="one">Ignored</label>
               <input required type="radio" id="one" name="orderType" value="1"
