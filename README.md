@@ -7,6 +7,7 @@
 ![FORKS](https://img.shields.io/github/forks/scottbromander/the_marketplace.svg?style=social)
 
 # Full-Stack Feedback App
+https://daily-feedback-app.herokuapp.com/#/
 
 ## Description
 
@@ -16,7 +17,7 @@ A place for users to subimt feedback.
 Uniquely styled and responsive to fit a mobile device or larger screen.
 
 ## Screen Shot
-
+![Screenshot](/public/images/screenshot.png?raw=true "Welcome Screen")
 
 ### Prerequisites
 
@@ -39,6 +40,7 @@ bring in a URL for an image, give it a description, enjoy the show!
 
 ## Built With
 React
+redux
 CSS
 JavaScript
 axios
@@ -47,6 +49,7 @@ express
 pg
 postgres w/dbeaver for GUI
 SweetAlerts
+Icons made by www.flaticon.com
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
