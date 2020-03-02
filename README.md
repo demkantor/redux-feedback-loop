@@ -7,7 +7,7 @@
 ![FORKS](https://img.shields.io/github/forks/scottbromander/the_marketplace.svg?style=social)
 
 # Full-Stack Feedback App
-https://daily-feedback-app.herokuapp.com/#/
+
 
 ## Description
 
@@ -36,7 +36,8 @@ react
 5. The `npm run client` command will open up a new browser tab for you!
 
 ## Usage
-bring in a URL for an image, give it a description, enjoy the show!
+Feel free to try it out here! (see if you can find hidden admin link)
+https://daily-feedback-app.herokuapp.com/#/
 
 ## Built With
 React
