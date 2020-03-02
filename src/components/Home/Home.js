@@ -8,7 +8,7 @@ class Home extends Component {
   render() {
 
     return (
-        <div className="App">
+        <div className="home">
         <Router>
           <Link to='/feelings'><h1>Take the Feedback Survey</h1></Link>
         </Router>

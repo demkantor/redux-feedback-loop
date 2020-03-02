@@ -76,7 +76,7 @@ return (
         <div className="admin">
           <h1>Previous Feedback</h1>
           <p>click a line to flag</p>
-          <table>
+          <table className="feedbackArray">
             <thead>
               <tr>
                 <th>Feeling Score</th>
@@ -86,7 +86,7 @@ return (
                 <th>Delete Feedback</th>
               </tr>
             </thead>
-            <tbody className="feedbackArray">
+            <tbody>
               {this.state.feedbackArray.map(feedback => 
                   <tr key={feedback.id} data-value={feedback.flagged} onClick={() => 
                     this.addFlag(feedback, `${feedback.flagged}`)}>
@@ -94,12 +94,12 @@ return (
                     <td>{feedback.understanding}</td>
                     <td>{feedback.support}</td>
                     <td>{feedback.comments}</td>
-                    <td><button onClick={()=>this.removeMe(feedback)} className="deleteButton">Remove Order</button></td>
+                    <td><button onClick={()=>this.removeMe(feedback)} className="deleteButton">Remove</button></td>
                   </tr>
                 )}
             </tbody> 
         </table>
-        <button className="nextButton" onClick={this.goHome}>Take Me Home</button>
+        <button className="homeButton" onClick={this.goHome}>Take Me Home</button>
       </div>
     );
   }

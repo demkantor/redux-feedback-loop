@@ -9,11 +9,12 @@ class Submitted extends Component {
   
 render() {
 return (
-        <div className="submitted">
+        <div className="main">
           <h1>Submitted!</h1>
-          <h1>Thank you!</h1>
+          <h2>Thank you!</h2>
+          <br/>
           <p>feel free to take the survey again</p>
-          <button className="nextButton" onClick={this.handleClick}>Return Home</button>
+          <button className="homeButton" onClick={this.handleClick}>Return Home</button>
         </div>
     );
   }

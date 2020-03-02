@@ -11,6 +11,10 @@ class Supporting extends Component {
   nextPage =()=>{
     this.props.history.push('/comments');
   } 
+
+  prevPage =()=>{
+    this.props.history.push('/understanding');
+  }
   
   handleChangeFor = (event) => {
     this.setState({
@@ -63,7 +67,10 @@ return (
                 />
               <label for="five">Pampered</label>
               <br/>
-              <button className="nextButton">Next</button>
+              <span>
+                <button type="button" onClick={this.prevPage} className="prevButton">Prev</button>
+                <button className="nextButton">Next</button>
+              </span>
             </form>
         </div>
     );

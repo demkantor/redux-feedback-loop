@@ -12,6 +12,10 @@ class Feeling extends Component {
     this.props.history.push('/understanding');
   }
 
+  prevPage =()=>{
+    this.props.history.push('/');
+  }
+
   handleChangeFor = (event) => {
     this.setState({
         feeling: event.target.value
@@ -34,11 +38,11 @@ class Feeling extends Component {
 render() {
 
 return (
-        <div className="feeling">
+        <div className="main">
           <div className="meter">
             <span className="one"></span>
           </div>
-          <h1>How are you feeling today?</h1>
+          <h1>HTell us how you are feeling today?</h1>
           <p>please rank how you feel today on a five point scale</p>
             <form onSubmit={this.recordResponse}>
             <label for="one">Abysmal</label>
@@ -63,7 +67,10 @@ return (
                 />
               <label for="five">Amazing!</label>
               <br/>
-              <button className="nextButton">Next</button>
+              <span>
+                <button type="button" onClick={this.prevPage} className="prevButton">Prev</button>
+                <button className="nextButton">Next</button>
+              </span>
             </form>
         </div>
     );

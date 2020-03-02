@@ -11,6 +11,10 @@ class Comments extends Component {
   nextPage =()=>{
     this.props.history.push('/review');
   } 
+
+  prevPage =()=>{
+    this.props.history.push('/supporting');
+  }
   
   handleChangeFor = (event) => {
     this.setState({
@@ -42,8 +46,11 @@ return (
           <form onSubmit={this.recordResponse}>
           <input placeholder="feel free to speak your mind" 
               onChange={this.handleChangeFor}
-          />
-          <button className="nextButton" onClick={this.handleClick}>Next</button>
+              size="50" />
+              <span>
+                <button type="button" onClick={this.prevPage} className="prevButton">Prev</button>
+                <button className="nextButton">Next</button>
+              </span>
           </form>
         </div>
     );

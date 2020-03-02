@@ -11,6 +11,10 @@ class Understanding extends Component {
   nextPage =()=>{
     this.props.history.push('/supporting');
   } 
+
+  prevPage =()=>{
+    this.props.history.push('/feelings');
+  }
   
   handleChangeFor = (event) => {
     this.setState({
@@ -34,7 +38,7 @@ class Understanding extends Component {
 
 render() {
 return (
-        <div className="understanding">
+        <div className="main">
           <div className="meter">
             <span className="quarter"></span>
           </div>
@@ -63,7 +67,10 @@ return (
                 />
               <label for="five">Rhode Scholar</label>
               <br/>
-              <button className="nextButton">Next</button>
+              <span>
+                <button type="button" onClick={this.prevPage} className="prevButton">Prev</button>
+                <button className="nextButton">Next</button>
+              </span>
             </form>
         </div>
     );

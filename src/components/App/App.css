@@ -1,21 +1,58 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  line-height: 1.6;
+  min-height: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+.card{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 600px;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2em;
+}
+
+.adminLink{
+  float: left;
+  font-size: smaller;
+  color: #002999;
+}
+
+.App-header {
+  background-color: #002999;;
+  min-height: 70px;
+  min-width: 400px;
+  padding: 20px;
+  color: whitesmoke;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
 th, td {
+  font-size: x-small;
   text-align: left;
   padding: 8px;
 }
 
 th{
-  color: white;
-  background-color: #033076;
-  font-size: larger;
+  color: whitesmoke;
+  background-color: #002999;;
+  font-size: small;
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #D9DADE;
 }
 
 tr:hover{
@@ -24,20 +61,19 @@ tr:hover{
 }
 
 [data-value="true"]{
-  color: #035ff1;
-  font-size: larger;
+  color: white;
+  background-color: #297bff !important;
 }
 
-.adminLink{
-  float: left;
-  font-size: smaller;
-  color: #033076;
+.home{
+  text-decoration: none;
 }
+
 .meter{
-  height: 1rem;
-  width: 30rem;
+  height: 2rem;
+  width: 300px;
 	margin: auto;
-	background: rgb(165, 165, 165);
+	background: #7A96E2;
 	-moz-border-radius: 25px;
 	-webkit-border-radius: 25px;
 	border-radius: 25px;
@@ -61,6 +97,10 @@ tr:hover{
   width: 75%;
 }
 
+.full{
+  width: 99%
+}
+
 .meter > span {
   display: block;
   height: 100%;
@@ -68,7 +108,7 @@ tr:hover{
   border-bottom-right-radius: 8px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  background-color: rgb(43, 226, 92);
+  background-color: #3968E8;
   background-image: linear-gradient(
     center bottom,
     rgb(43,194,83) 37%,
@@ -81,58 +121,102 @@ tr:hover{
   overflow: hidden;
 }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
-
-.title {
-  color: #033076;
-  font-size: 18px;
-}
-
-button {
+.nextButton{
   border: none;
   outline: 0;
-  display: inline-block;
   padding: 8px;
   color: white;
-  background-color: #033076;
+  background-color: #002999;
   text-align: center;
   cursor: pointer;
-  width: 100%;
+  width: 80px;
   font-size: 18px;
+  margin: 10px;
+  float: right;
 }
 
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
+.nextButton:hover{
+  font-size: larger;
 }
 
-button:hover, a:hover {
-  opacity: 0.7;
-}
-
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #033076;
-  min-height: 70px;
-  padding: 20px;
+.prevButton{
+  border: none;
+  outline: 0;
+  padding: 8px;
   color: white;
+  background-color: #002999;
+  text-align: center;
+  cursor: pointer;
+  width: 20%;
+  font-size: 18px;
+  margin: 10px;
+  float: left;
 }
 
-.App-title {
-  font-size: 1.5em;
+.prevButton:hover{
+  font-size: larger;
 }
 
-.App-intro {
-  font-size: large;
+.homeButton{
+  border: none;
+  outline: 0;
+  padding: 10px;
+  color: white;
+  background-color: #002999;
+  text-align: center;
+  cursor: pointer;
+  width: 120px;
+  font-size: 18px;
+  margin: 10px;
+  float: right;
 }
 
+.deleteButton{
+  border: none;
+  outline: 0;
+  padding: 6px;
+  color: white;
+  background-color: #002999;
+  text-align: center;
+  cursor: pointer;
+  width: 120px;
+  font-size: 12px;
+  margin: 2px;
+}
+
+@media (min-width: 600px){
+  .card{
+    flex-direction: row;
+    min-width: 700px;
+    padding: 10px;
+    min-height: 300px;
+  }
+
+  .App-header{
+    min-width: 150px;
+    font-size: smaller;
+    padding: 15px;
+  }
+
+  .main{
+    margin: auto;
+    min-height: 300px;
+  }
+
+  td {
+    font-size: medium;
+    text-align: left;
+    padding: 2px;
+  }
+  
+  th{
+    font-size: large;
+    padding: 8px;
+  }
+
+  .home{
+    padding: 10px;
+    padding-left: 20px;
+  }
+
+}

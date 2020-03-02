@@ -7,6 +7,10 @@ import swal from 'sweetalert';
 
 class Review extends Component {
 
+  prevPage =()=>{
+    this.props.history.push('/comments');
+  }
+
 
   handleClick =()=>{
   let objectToSend = {
@@ -63,7 +67,10 @@ class Review extends Component {
 render() {
  
 return (
-        <div className="review">
+        <div className="main">
+          <div className="meter">
+            <span className="full"></span>
+          </div>
           <h1>Review!</h1>
           <h2>this is what you had to say</h2>
           <table>
@@ -84,7 +91,10 @@ return (
                   </tr>
             </tbody> 
         </table>
+        <span>
+          <button type="button" onClick={this.prevPage} className="prevButton">Prev</button>
           <button className="nextButton" onClick={this.handleClick}>Submit</button>
+        </span>
         </div>
     );
   }
