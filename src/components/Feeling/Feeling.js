@@ -42,27 +42,27 @@ return (
           <div className="meter">
             <span className="one"></span>
           </div>
-          <h1>Please let us how you are feeling today?</h1>
+          <h1>Let us know how you are feeling today?</h1>
           <p>please rank how you feel today on a five point scale</p>
             <form onSubmit={this.recordResponse}>
             <label for="one">Abysmal</label>
-              <input required type="radio" id="one" name="orderType" value="1"
+              <input required type="radio" id="one" className="radio" name="orderType" value="1"
                 onChange={this.handleChangeFor}
               />
               <label for="one">-----</label>
-              <input required type="radio" id="two" name="orderType" value="2"
+              <input required type="radio" id="two" className="radio" name="orderType" value="2"
                 onChange={this.handleChangeFor} 
                 />
               <label for="two">-----</label>
-              <input required type="radio" id="three" name="orderType" value="3"
+              <input required type="radio" id="three" className="radio" name="orderType" value="3"
                 onChange={this.handleChangeFor}
               />
               <label for="three">-----</label>
-              <input required type="radio" id="four" name="orderType" value="4"
+              <input required type="radio" id="four" className="radio" name="orderType" value="4"
                 onChange={this.handleChangeFor} 
                 />
               <label for="four">-----</label>
-              <input required type="radio" id="five" name="orderType" value="5"
+              <input required type="radio" id="five" className="radio" name="orderType" value="5"
                 onChange={this.handleChangeFor} 
                 />
               <label for="five">Amazing!</label>

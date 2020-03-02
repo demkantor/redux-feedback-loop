@@ -13,7 +13,7 @@ body{
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   width: 80%;
   max-width: 600px;
-  min-width: 500px;
+  min-width: 430px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -29,7 +29,7 @@ body{
 .App-header {
   background-color: #002999;;
   min-height: 70px;
-  min-width: 400px;
+  min-width: 300px;
   padding: 20px;
   color: whitesmoke;
 }
@@ -42,7 +42,7 @@ table {
 th, td {
   font-size: x-small;
   text-align: left;
-  padding: 8px;
+  padding: 4px;
 }
 
 th{
@@ -185,7 +185,28 @@ tr:hover{
 }
 
 .input{
-  width: 400px
+  width: 360px
+}
+
+.radio{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+
+  border: 3px solid #3968E8;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+
+  position: relative;
+  top: 4px;
+}
+
+.radio:checked {
+  border: 7px solid #3968E8;
 }
 
 @media (min-width: 600px){
